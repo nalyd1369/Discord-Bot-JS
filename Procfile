@@ -1,1 +1,1 @@
-ECHO is on.
+worker: node index.js

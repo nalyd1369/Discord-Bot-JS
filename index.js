@@ -3,7 +3,7 @@ const fs = require('fs')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
-const config = require('./config.json')
+//const config = require('./config.json')
 const firstMessage = require('./first-message.js')
 const roleClaim = require('./role-claim.js')
 const createChannel = require('./commands/misc/createChannel.js')
@@ -40,4 +40,4 @@ client.on('ready', async () => {
 	//roleClaim(client)
 })
 
-client.login(config.token)
+client.login(process.env.DJS_Token)
