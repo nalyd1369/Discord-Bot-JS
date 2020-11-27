@@ -1,0 +1,22 @@
+{
+    "name": "JS Bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^12.4.1",
+        "git": "^0.1.5",
+        "mongoose": "^5.10.15"
+    },
+    "_moduleAliases": {
+        "@root": ".",
+        "@schemas": "./schemas",
+        "util": "util",
+        "@features": "./features/features",
+        "@commands": "./commands/commands"
+    }
+}
