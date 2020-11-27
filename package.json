@@ -1,5 +1,5 @@
 {
-    "name": "JS Bot",
+    "name": "JS-Bot",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -10,7 +10,9 @@
     "dependencies": {
         "discord.js": "^12.4.1",
         "git": "^0.1.5",
-        "mongoose": "^5.10.15"
+        "mongoose": "^5.10.15",
+        "node.js": "0.0.1-security",
+        "snekfetch": "^4.0.4"
     },
     "_moduleAliases": {
         "@root": ".",
