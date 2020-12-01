@@ -16,26 +16,28 @@ module.exports = {
                 const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
                 if (!allowed.length) return message.channel.send('It seems we are out of fresh memes!, Try again later.');
                 const randomnumber = Math.floor(Math.random() * allowed.length)
-                const embed = new Discord.MessageEmbed()
-                    .setColor(0x00A2E8)
-                    .setImage(allowed[randomnumber].data.url)
-                message.channel.send(embed)
+                const randomnumber1 = Math.floor(Math.random() * allowed.length)
+                const randomnumber2 = Math.floor(Math.random() * allowed.length)
+                message.channel.send(allowed[randomnumber].data.url).delete({ timeout: 5000 })
+                //message.channel.send(allowed[randomnumber1].data.url)
+                //message.channel.send(allowed[randomnumber2].data.url)
             } catch (err) {
                 return console.log(err);
             }
         }
-        if (arguments.toString().toLowerCase() === 'femboy' || arguments.toString().toLowerCase() === 'femboys') {
+        if (arguments.toString().toLowerCase() === 'cringe' || arguments.toString().toLowerCase() === 'cringy') {
             try {
                 const { body } = await snekfetch
-                    .get('https://www.reddit.com/r/femboy.json?sort=top&t=year')
+                    .get('https://www.reddit.com/r/okaybuddyretard.json?sort=top&t=week')
                     .query({ limit: 400 });
                 const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
                 if (!allowed.length) return message.channel.send('It seems we are out of femboys!, Try again later.');
                 const randomnumber = Math.floor(Math.random() * allowed.length)
-                const embed = new Discord.MessageEmbed()
-                    .setColor(0x00A2E8)
-                    .setImage(allowed[randomnumber].data.url)
-                message.channel.send(embed)
+                const randomnumber1 = Math.floor(Math.random() * allowed.length)
+                const randomnumber2 = Math.floor(Math.random() * allowed.length)
+                message.channel.send(allowed[randomnumber].data.url)
+                message.channel.send(allowed[randomnumber1].data.url)
+                message.channel.send(allowed[randomnumber2].data.url)
             } catch (err) {
                 return console.log(err);
             }
@@ -49,15 +51,25 @@ module.exports = {
                     const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
                     if (!allowed.length) return message.channel.send('It seems we are out of legs!, Try again later.');
                     const randomnumber = Math.floor(Math.random() * allowed.length)
-                    const embed = new Discord.MessageEmbed()
-                        .setColor(0x00A2E8)
-                        .setImage(allowed[randomnumber].data.url)
-                    message.channel.send(embed)
+                    const randomnumber1 = Math.floor(Math.random() * allowed.length)
+                    const randomnumber2 = Math.floor(Math.random() * allowed.length)
+                    message.channel.send(allowed[randomnumber].data.url)
+                    message.channel.send(allowed[randomnumber1].data.url)
+                    message.channel.send(allowed[randomnumber2].data.url)
                 } catch (err) {
                     return console.log(err);
                 }
             } else {
                 message.channel.send('Sorry this library is only allowed in nsfw channels!')
+            }
+        }
+        if (arguments.toString().toLowerCase() === 'joseph' || arguments.toString().toLowerCase() === 'hot man') {
+            try {
+                message.channel.send("https://youtu.be/3IrqSADCxH8")
+                message.channel.send("https://youtu.be/3IrqSADCxH8")
+                message.channel.send("https://youtu.be/3IrqSADCxH8")
+            } catch (err) {
+                return console.log(err);
             }
         }
     },

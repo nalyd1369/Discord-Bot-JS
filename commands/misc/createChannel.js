@@ -11,7 +11,7 @@ function moveVC(message, text) {
             allow: ['CONNECT', 'SPEAK', 'STREAM', 'USE_VAD'],
         }]
     }) .then((channel) => {
-        message.channel.send(`Created voice channel "${channel.name}"`)
+        //message.channel.send(`Created voice channel "${channel.name}"`)
         channel.setParent(wantedChannel.id)
         deleteEmptyChannelAfterDelay(wantedChannel, message);
     }) .catch((err) => {
@@ -31,11 +31,7 @@ module.exports = {
         var wantedChannel = message.guild.channels.cache.find(channels => channels.name === "Custom");
         if (!wantedChannel) {
             message.guild.channels.create ('Custom', {
-            type: 'category',
-            permissionOverwrites: [{
-                id: message.guild.id,
-                deny: ['VIEW_CHANNEL'],
-            }]
+            type: 'category'
             })
             setTimeout(moveVC, 1000, message, text)
             return
@@ -46,12 +42,13 @@ module.exports = {
     requiredRoles: [], 
 }
 
-function deleteEmptyChannelAfterDelay(voiceChannel, message, delayMS = 3 * 60000){
+function deleteEmptyChannelAfterDelay(voiceChannel, message, delayMS = 2 * 60000){
     var interval = setInterval (function () {
         const voiceChannels = message.guild.channels.cache.filter(c => c.type === 'voice');
         console.log('Ran Interval')
+        var wantedChannel = message.guild.channels.cache.find(channels => channels.name === "Custom");
         for (const [id, voiceChannel] of voiceChannels) {
-            if (voiceChannel.members.size === 0) {
+            if (voiceChannel.parent === wantedChannel && voiceChannel.members.size === 0) {
                 console.log(`Deleted channel ${voiceChannel}`)
                 voiceChannel.delete()
                 clearInterval(interval)
