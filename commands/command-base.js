@@ -82,7 +82,7 @@ module.exports = (client, commandOptions) => {
         content.toLowerCase() === command
       ) {
         // A command has been ran
-
+        
         // Ensure the user has the required permissions
         for (const permission of permissions) {
           if (!member.hasPermission(permissions)) {
@@ -104,6 +104,8 @@ module.exports = (client, commandOptions) => {
             return
           }
         }
+
+        if(message.author.id === client.user.id) return;
 
         // Split on any number of spaces
         const arguments = content.split(/[ ]+/)

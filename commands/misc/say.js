@@ -9,6 +9,8 @@ module.exports = {
     callback: (message, arguments, text, client) => {
         message.delete()
         message.channel.send(text)
+        .catch(err => {
+            console.error(err)})
     },
     permissions: "",
     requiredRoles: [],

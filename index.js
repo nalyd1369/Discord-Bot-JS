@@ -4,7 +4,6 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const config = require('./config.json')
-const { token } = require('./token.json'); 
 const firstMessage = require('./first-message.js')
 const roleClaim = require('./role-claim.js')
 const createChannel = require('./commands/misc/createChannel.js')
@@ -41,4 +40,4 @@ client.on('ready', async () => {
 	//roleClaim(client)
 })
 
-client.login(token)
+client.login(config.token)
