@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+/* const Discord = require("discord.js");
 const snekfetch = require('snekfetch');
 
 module.exports = {
@@ -75,4 +75,4 @@ module.exports = {
     },
     permissions: "",
     requiredRoles: [],
-}
+} */

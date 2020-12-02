@@ -14,6 +14,7 @@ module.exports = {
         **${config.prefix}vc <Name>** - Creates a custom voice channel
         **${config.prefix}purge** - Deletes up to 100 messages
         **${config.prefix}say <Text>** - Says the message
+        **${config.prefix}spam <Library>** - Spams from Reddit (Disabled)
         **${config.prefix}status** - Sends some stats about the server (WIP)
         **${config.prefix}kick <Member>** - Kicks a member
         **${config.prefix}ban <Member>** - Bans a member\n

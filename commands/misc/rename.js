@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+/* const Discord = require("discord.js");
 
 module.exports = {
     commands: ["rename"],
@@ -14,4 +14,4 @@ module.exports = {
     },
     permissions: "",
     requiredRoles: [],
-}
+} */
