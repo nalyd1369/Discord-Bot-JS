@@ -25,6 +25,9 @@ client.on('ready', async () => {
       		}
     	}
 	}
+
+	console.log(`${client.guilds.cache.size} servers`)
+
 	readCommands('commands')
 
 	client.user.setPresence({
