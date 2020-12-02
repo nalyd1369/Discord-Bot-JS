@@ -1,4 +1,4 @@
-/* const Discord = require("discord.js");
+const Discord = require("discord.js");
 const snekfetch = require('snekfetch');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     minArgs: 0,
     maxArgs: 1,
     callback: async (message, arguments, text) => { 
-        if (arguments.toString().toLowerCase() === 'meme' || arguments.toString().toLowerCase() === 'memes') {
+        /* if (arguments.toString().toLowerCase() === 'meme' || arguments.toString().toLowerCase() === 'memes') {
             try {
                 const { body } = await snekfetch
                     .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
@@ -71,8 +71,9 @@ module.exports = {
             } catch (err) {
                 return console.log(err);
             }
-        }
+        } */
+        return
     },
     permissions: "",
     requiredRoles: [],
-} */
+}

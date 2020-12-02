@@ -1,4 +1,4 @@
-/* const Discord = require("discord.js");
+const Discord = require("discord.js");
 
 module.exports = {
     commands: ["rename"],
@@ -7,11 +7,12 @@ module.exports = {
     minArgs: 1,
     maxArgs: 1,
     callback: (message, arguments, text, client) => {
-        wantedChannel = message.member.voice.channel
+        /* wantedChannel = message.member.voice.channel
         console.log(arguments.split())
-        //wantedChannel.setName(wantedChannel)
-        //.catch(console.error);
+        wantedChannel.setName(wantedChannel)
+        .catch(console.error); */
+        return
     },
     permissions: "",
     requiredRoles: [],
-} */
+} 
