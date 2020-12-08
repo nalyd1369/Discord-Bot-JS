@@ -1,0 +1,26 @@
+{
+    "name": "JS-Bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^12.5.1",
+        "git": "^0.1.5",
+        "mongoose": "^5.11.4",
+        "node-cron": "^2.0.3",
+        "node.js": "0.0.1-security",
+        "redis": "^3.0.2",
+        "snekfetch": "^4.0.4"
+    },
+    "_moduleAliases": {
+        "@root": ".",
+        "@schemas": "./schemas",
+        "util": "util",
+        "@features": "./features/features",
+        "@commands": "./commands/commands"
+    }
+}
