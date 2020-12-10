@@ -4,9 +4,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const config = require('./config.json')
-const firstMessage = require('./first-message.js')
 const schedule = require('./schedule.js')
-const roleClaim = require('./role-claim.js')
 const createChannel = require('./commands/misc/createChannel.js')
 const mongo = require('./mongo')
 
@@ -41,10 +39,7 @@ client.on('ready', async () => {
 	.catch(console.error);
 
 	schedule(client)
-	console.log('The client is ready!')
-	//firstMessage(client, '779039138870722591', "This bot is still in an extreme beta. Please DM Dylan with any bugs, feature requests, or improvements!\nThis bot is very experimental and will take a while to get nailed down, please be patient as he's being developed", ['👍'])
-	//roleClaim(client)
-	//var wantedRole = client.guild.roles.find(role => role.name === "Updates");
+	console.log('The test client is ready!')
 })
 
 client.login(config.token)

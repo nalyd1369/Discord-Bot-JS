@@ -12,9 +12,9 @@ module.exports = {
         
         **${config.prefix}ping** - Sends latency
         **${config.prefix}vc <name>** - Creates a custom voice channel
+        **${config.prefix}update** - Toggles the daily schedule notification
         **${config.prefix}purge <amount>** - Deletes up to 100 messages
         **${config.prefix}say <text>** - Says the message
-        **${config.prefix}spam <library>** - Spams from Reddit (Disabled)
         **${config.prefix}status** - Sends some stats about the server (WIP)
         **${config.prefix}kick <member>** - Kicks a member
         **${config.prefix}ban <member>** - Bans a member\n

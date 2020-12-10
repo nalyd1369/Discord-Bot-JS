@@ -1,6 +1,6 @@
 {
-    "prefix": "!",
+    "prefix": ".",
     "mongoPath": "mongodb://localhost:27017/discordbot",
-    "token": "NzgzODQyNzU5MDQzNDQ4ODMy.X8godA.9whLcyzejOB0wyke_xsvLOOrVZo",
+    "token": "Nzc3MzI0OTg4MzE0ODEyNDU4.X7ByTw.__7qihlfemb5x2gf1SQIWQeiPyI",
     "redisPath": "//redis-13759.c98.us-east-1-4.ec2.cloud.redislabs.com:13759?password=YPo6akCRyZXzICbXrUdJA2bWDBjUL1kT"
 }

@@ -37,6 +37,8 @@ module.exports = {
             return
         }
         moveVC(message, text)
+        message.react('👌')
+        console.log('Reacted')
     },
     permissions: "",
     requiredRoles: [], 
