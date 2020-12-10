@@ -25,10 +25,10 @@ module.exports = {
 
         if(message.member.roles.cache.find(r => r.name === "Updates")) {
             message.member.roles.remove(wantedRole)
-            message.channel.send('You will no longer receive notifications')
+            message.react("👌")
         } else {
             message.member.roles.add(wantedRole)
-            message.channel.send('You will now receive notifications')
+            message.react("👌")
         }
     },
     permissions: "",
