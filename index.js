@@ -7,6 +7,7 @@ const config = require('./config.json')
 const schedule = require('./schedule.js')
 const createChannel = require('./commands/misc/createChannel.js')
 const mongo = require('./mongo')
+const membersCount = require('./membersCount')
 
 client.on('ready', async () => {
 
@@ -26,7 +27,8 @@ client.on('ready', async () => {
     	}
 	}
 
-	console.log(`${client.guilds.cache.size} servers`)
+	serverCount = client.guilds.cache.size
+	console.log(`${serverCount} servers`)
 
 	readCommands('commands')
 
@@ -39,7 +41,7 @@ client.on('ready', async () => {
 	.catch(console.error);
 
 	schedule(client)
-	console.log('The test client is ready!')
+	console.log('The client is ready!')
 })
 
 client.login(config.token)

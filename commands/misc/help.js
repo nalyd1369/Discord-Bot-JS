@@ -10,18 +10,18 @@ module.exports = {
     callback: (message, arguments, text) => {
         if (message.member.hasPermission('ADMINISTRATOR')) {
             const help = new Discord.MessageEmbed()
-            //.setTitle('Commands')
             .addFields(
                 { name: `Commands`,
                 value: `
                 **${config.prefix}ping** - Sends latency
                 **${config.prefix}vc <name>** - Creates a custom voice channel
-                **${config.prefix}update** - Toggles the daily schedule notification},
+                **${config.prefix}update** - Toggles the daily schedule notification(WIP),
                 **${config.prefix}purge <amount>** - Deletes up to 100 messages
                 **${config.prefix}say <text>** - Says the message
                 **${config.prefix}status** - Sends some stats about the server (Broken)
                 **${config.prefix}kick <member>** - Kicks a member
-                **${config.prefix}ban <member>** - Bans a member`
+                **${config.prefix}ban/unban <member>** - Bans or unbans a member
+                **${config.prefix}lock/unlock <member>** - Locks or unlocks a channel`
                 }
             )
             .setFooter(`*This bot is still in beta. Please DM Dylan with any bugs, feature requests, or improvements!*`)
@@ -29,13 +29,12 @@ module.exports = {
             return
         } else {
             const help = new Discord.MessageEmbed()
-            .setTitle('Commands')
             .addFields(
                 { name: `Commands`,
                 value: `
                 **${config.prefix}ping** - Sends latency
                 **${config.prefix}vc <name>** - Creates a custom voice channel
-                **${config.prefix}update** - Toggles the daily schedule notification},
+                **${config.prefix}update** - Toggles the daily schedule notification(WIP),
                 **${config.prefix}say <text>** - Says the message
                 **${config.prefix}status** - Sends some stats about the server (Broken)`
                 }
