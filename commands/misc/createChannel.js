@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
 
 function moveVC(message, text) {
     var wantedChannel = message.guild.channels.cache.find(channels => channels.name === "Custom");

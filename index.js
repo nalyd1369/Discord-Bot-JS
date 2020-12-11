@@ -5,9 +5,6 @@ const client = new Discord.Client()
 
 const config = require('./config.json')
 const schedule = require('./schedule.js')
-const createChannel = require('./commands/misc/createChannel.js')
-const mongo = require('./mongo')
-const membersCount = require('./membersCount')
 
 client.on('ready', async () => {
 
