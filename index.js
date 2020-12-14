@@ -23,9 +23,8 @@ client.on('ready', async () => {
       		}
     	}
 	}
-
-	serverCount = client.guilds.cache.size
-	console.log(`${serverCount} servers`)
+ 
+	console.log(`${client.guilds.cache.size} servers`)
 
 	readCommands('commands')
 
@@ -42,4 +41,4 @@ client.on('ready', async () => {
 })
 
 client.login(config.token)
-//NzgzODQyNzU5MDQzNDQ4ODMy.X8godA.9whLcyzejOB0wyke_xsvLOOrVZo
+//Nzc3MzI0OTg4MzE0ODEyNDU4.X7ByTw.__7qihlfemb5x2gf1SQIWQeiPyI

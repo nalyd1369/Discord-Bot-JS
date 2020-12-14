@@ -7,23 +7,23 @@ function createRole (message) {
           name: 'Muted',
         },
       })
-    .catch(console.error);
+        .catch(console.error);
 }
 
 module.exports = {
-    commands: ["mute"],
+    commands: ["unmute"],
     expectedArgs: '<Member>',
     permissionError: "You need admin permissions to run this command",
     minArgs: 1,
     maxArgs: 1,
     callback: async (message, arguments, text, client) => {
-        target = message.mentions.users.first()
+        //target = message.mentions.users.first()
         var wantedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
         if (!wantedRole) {
             createRole(message)
             var wantedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
         }
-        //target.roles.add(wantedRole)
+        target.roles.add(wantedRole)
         //.catch(console.log())
     },
     permissions: "MUTE_MEMBERS",
