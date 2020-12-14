@@ -1,15 +1,6 @@
 const Discord = require("discord.js");
 const redis = require('../../redis')
 
-function createRole (message) {
-    message.guild.roles.create({
-        data: {
-          name: 'Muted',
-        },
-      })
-    .catch(console.error);
-}
-
 module.exports = {
     commands: ["mute"],
     expectedArgs: '<Member>',
@@ -17,14 +8,35 @@ module.exports = {
     minArgs: 1,
     maxArgs: 1,
     callback: async (message, arguments, text, client) => {
-        target = message.mentions.users.first()
-        var wantedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
-        if (!wantedRole) {
-            createRole(message)
-            var wantedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
+        target = message.mentions.members.first()
+        let mutedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
+        
+        if (!mutedRole) {
+            try {
+                mutedRole = await message.guild.createRole({
+                    name: "Muted",
+                    color: "#4788ff",
+                    permissions: []
+                });
+
+                message.guild.channels.forEach(async (channel, id) => {
+                    await channel.overwritePermissions(mutedRole, {
+                        SEND_MESSAGES: false,
+                        ADD_REACTIONS: false
+                    })
+                });
+            } catch(e) {
+                // If err print
+                console.log(e.stack);
+            }
         }
-        //target.roles.add(wantedRole)
-        //.catch(console.log())
+
+        try {
+            target.roles.add(mutedRole)
+            message.react('👌')
+        } catch(e) {
+            console.log(e.stack)
+        }
     },
     permissions: "MUTE_MEMBERS",
     requiredRoles: [],

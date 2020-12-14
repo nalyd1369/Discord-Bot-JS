@@ -17,14 +17,15 @@ module.exports = {
     minArgs: 1,
     maxArgs: 1,
     callback: async (message, arguments, text, client) => {
-        //target = message.mentions.users.first()
-        var wantedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
-        if (!wantedRole) {
-            createRole(message)
-            var wantedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
-        }
-        target.roles.add(wantedRole)
-        //.catch(console.log())
+      target = message.mentions.members.first()
+      let mutedRole = message.guild.roles.cache.find(roles => roles.name === "Muted");
+
+      try {
+        target.roles.remove(mutedRole)
+        message.react('👌')
+      } catch(e) {
+        console.log(e.stack)
+      }
     },
     permissions: "MUTE_MEMBERS",
     requiredRoles: [],

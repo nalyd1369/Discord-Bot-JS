@@ -21,6 +21,7 @@ module.exports = {
                 **${config.prefix}status** - Sends some stats about the server (Broken)
                 **${config.prefix}kick <member>** - Kicks a member
                 **${config.prefix}ban/unban <member>** - Bans or unbans a member
+                **${config.prefix}mute/unmute <member>** - Mutes or unmutes a member (Buggy)
                 **${config.prefix}lock/unlock <member>** - Locks or unlocks a channel`
                 }
             )
