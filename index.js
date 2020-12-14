@@ -41,4 +41,4 @@ client.on('ready', async () => {
 })
 
 client.login(config.token)
-//Nzc3MzI0OTg4MzE0ODEyNDU4.X7ByTw.__7qihlfemb5x2gf1SQIWQeiPyI
+//NzgzODQyNzU5MDQzNDQ4ODMy.X8godA.9whLcyzejOB0wyke_xsvLOOrVZo
