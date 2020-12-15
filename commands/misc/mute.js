@@ -13,17 +13,22 @@ module.exports = {
         
         if (!mutedRole) {
             try {
-                mutedRole = await message.guild.createRole({
-                    name: "Muted",
-                    color: "#4788ff",
-                    permissions: []
+                mutedRole = await message.guild.roles.create({
+                    data: {
+                        name: 'Muted',
+                        color: '4788ff',
+                      },
                 });
 
-                message.guild.channels.forEach(async (channel, id) => {
-                    await channel.overwritePermissions(mutedRole, {
-                        SEND_MESSAGES: false,
-                        ADD_REACTIONS: false
-                    })
+                const channels = message.guild.channels.cache.filter(c => c.guild && c.type === 'text');
+                channels.forEach(channel => {
+                    console.log(channel.name)
+                    channel.overwritePermissions([
+                        {
+                           id: mutedRole,
+                           deny: ['SEND_MESSAGES', 'ADD_REACTIONS', 'CONNECT'],
+                        },
+                    ], 'Needed to change permissions');
                 });
             } catch(e) {
                 // If err print
