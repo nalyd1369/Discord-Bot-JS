@@ -23,12 +23,9 @@ module.exports = {
                 const channels = message.guild.channels.cache.filter(c => c.guild && c.type === 'text');
                 channels.forEach(channel => {
                     console.log(channel.name)
-                    channel.overwritePermissions([
-                        {
-                           id: mutedRole,
-                           deny: ['SEND_MESSAGES', 'ADD_REACTIONS', 'CONNECT'],
-                        },
-                    ], 'Needed to change permissions');
+                    channel.updateOverwrite(mutedRole, {
+                        SEND_MESSAGES: false
+                      })
                 });
             } catch(e) {
                 // If err print
