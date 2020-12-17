@@ -32,7 +32,7 @@ module.exports = {
             message.guild.channels.create ('Custom', {
             type: 'category'
             })
-            setTimeout(moveVC, 1000, message, text)
+            setTimeout(moveVC, 1500, message, text)
             return
         }
         moveVC(message, text)

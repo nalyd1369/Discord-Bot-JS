@@ -24,7 +24,12 @@ module.exports = {
         target.roles.remove(mutedRole)
         message.react('👌')
       } catch(e) {
-        console.log(e.stack)
+        if(member.id === client.user.id) {
+          message.reply('I cannot run this command on myself');
+        } else {
+          message.reply('Something went wrong')
+          console.log(e.stack)
+        }
       }
     },
     permissions: "MUTE_MEMBERS",

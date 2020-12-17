@@ -29,14 +29,20 @@ module.exports = {
                 });
             } catch(e) {
                 // If err print
+                message.reply('I was unable to mute the member');
                 console.log(e.stack);
             }
         }
 
         try {
-            target.roles.add(mutedRole)
-            message.react('👌')
+            if (!target.id === client.user.id) {
+                target.roles.add(mutedRole)
+                message.react('👌')
+            } else {
+                message.reply('I cannot mute myself')
+            }
         } catch(e) {
+            message.reply('Something went wrong')
             console.log(e.stack)
         }
     },

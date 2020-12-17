@@ -4,7 +4,7 @@ module.exports = {
     permissionError: "You need admin permissions to run this command",
     minArgs: 1,
     maxArgs: 1,
-    callback: (message, arguments, text) => {
+    callback: (message, arguments, text, client) => {
         const user = message.mentions.users.first();
         // If we have a user mentioned
         if (user) {
@@ -24,9 +24,13 @@ module.exports = {
                 // An error happened
                 // This is generally due to the bot not being able to ban the member,
                 // either due to missing permissions or role hierarchy
-                message.reply('I was unable to ban the member');
+                if(member.id === client.user.id) {
+                    message.reply('I cannot ban myself');
+                } else {
+                    message.reply('I was unable to ban the member');
+                    console.error(err);
+                }
                 // Log the error
-                console.error(err);
             });
         } else {
             // The mentioned user isn't in this guild
