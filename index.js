@@ -5,6 +5,7 @@ const client = new Discord.Client()
 
 const config = require('./config.json')
 const schedule = require('./schedule.js')
+const automod = require('./automod')
 
 client.on('ready', async () => {
 
@@ -27,6 +28,7 @@ client.on('ready', async () => {
 	console.log(`${client.guilds.cache.size} servers`)
 
 	readCommands('commands')
+	automod(client)
 
 	client.user.setPresence({
 		activity: {
