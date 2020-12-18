@@ -1,4 +1,4 @@
-const config = require('./config.json')
+const config = require('./filter.json')
 
 module.exports = async (client) => {
     client.on('message', message => {

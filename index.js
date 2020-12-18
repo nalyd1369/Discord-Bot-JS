@@ -6,6 +6,7 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const schedule = require('./schedule.js')
 const automod = require('./automod')
+const voiceChannelClean = require('./voiceChannelClean')
 
 client.on('ready', async () => {
 
@@ -39,6 +40,7 @@ client.on('ready', async () => {
 	.catch(console.error);
 
 	schedule(client)
+	voiceChannelClean(client)
 	console.log('The client is ready!')
 })
 
