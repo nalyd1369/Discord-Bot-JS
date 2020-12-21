@@ -35,11 +35,11 @@ module.exports = {
         }
 
         try {
-            if (!target.id === client.user.id) {
+            if (target.id === client.user.id) {
+                message.reply('I cannot mute myself')
+            } else {
                 target.roles.add(mutedRole)
                 message.react('👌')
-            } else {
-                message.reply('I cannot mute myself')
             }
         } catch(e) {
             message.reply('Something went wrong')

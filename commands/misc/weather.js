@@ -3,7 +3,7 @@ const axios = require('axios')
 
 module.exports = {
     commands: ["weather"],
-    expectedArgs: '',
+    expectedArgs: '<City>',
     permissionError: "You need admin permissions to run this command",
     minArgs: 0,
     maxArgs: null,

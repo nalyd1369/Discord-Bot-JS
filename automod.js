@@ -6,4 +6,10 @@ module.exports = async (client) => {
             message.delete()
         }
     })
+
+    client.on('messageUpdate', message => {
+        if(config.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
+            message.delete()
+        }
+    })
 }
