@@ -6,7 +6,6 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const schedule = require('./schedule.js')
 const automod = require('./automod')
-const voiceChannelClean = require('./voiceChannelClean')
 
 client.on('ready', async () => {
 
