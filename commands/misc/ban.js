@@ -3,7 +3,7 @@ module.exports = {
     expectedArgs: '<Member>',
     permissionError: "You need admin permissions to run this command",
     minArgs: 1,
-    maxArgs: 1,
+    maxArgs: null,
     callback: (message, arguments, text, client) => {
         const user = message.mentions.users.first();
         // If we have a user mentioned

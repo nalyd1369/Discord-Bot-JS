@@ -40,7 +40,6 @@ client.on('ready', async () => {
 	.catch(console.error);
 
 	schedule(client)
-	voiceChannelClean(client)
 	console.log('The client is ready!')
 })
 

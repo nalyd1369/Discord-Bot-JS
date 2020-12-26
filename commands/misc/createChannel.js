@@ -48,12 +48,13 @@ function deleteEmptyChannelAfterDelay(voiceChannel, message, delayMS = 2 * 60000
         const voiceChannels = message.guild.channels.cache.filter(c => c.type === 'voice');
         console.log('Ran Interval')
         var wantedChannel = message.guild.channels.cache.find(channels => channels.name === "Custom");
-        for (const [id, voiceChannel] of voiceChannels) {
-            if (voiceChannel.parent === wantedChannel && voiceChannel.members.size === 0) {
+        if (voiceChannel.parent === wantedChannel && voiceChannel.members.size === 0) {
+            for (const [id, voiceChannel] of voiceChannels) {   
                 console.log(`Deleted channel ${voiceChannel}`)
                 voiceChannel.delete()
                 clearInterval(interval)
             }
+            return
         }
     }, delayMS)
 };

@@ -20,11 +20,18 @@ module.exports = {
                       },
                 });
 
-                const channels = message.guild.channels.cache.filter(c => c.guild && c.type === 'text');
-                channels.forEach(channel => {
+                const textChannels = message.guild.channels.cache.filter(c => c.guild && c.type === 'text');
+                textChannels.forEach(channel => {
                     console.log(channel.name)
                     channel.updateOverwrite(mutedRole, {
-                        SEND_MESSAGES: false
+                        SEND_MESSAGES: false,
+                      })
+                });
+                const voiceChannels = message.guild.channels.cache.filter(c => c.guild && c.type === 'voice');
+                voiceChannels.forEach(channel => {
+                    console.log(channel.name)
+                    channel.updateOverwrite(mutedRole, {
+                        CONNECT: false
                       })
                 });
             } catch(e) {

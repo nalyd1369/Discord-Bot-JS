@@ -9,18 +9,19 @@ apiKey = 'c2e5e509a45ab96fea0c8c76dc0e5c1c'
 url = `https://api.openweathermap.org/data/2.5/weather?q=Dallas&units=imperial&appid=${apiKey}`
 
 module.exports = async (client) => {
-    var task = cron.schedule('0 0 14 25 * *', () =>  {
+    // second minute hour day month weekday
+    var task = cron.schedule('* * 14 4-24 * 1-5', () =>  {
         if(client.channels.cache.get(id)){
             if (day == 'a') {
                 //client.channels.cache.get(id).send(`<@&786670045283614771> Today is a A day!\nUse ${config.prefix}update to toggle updates`)
-                client.channels.cache.get(id).send(`<@&786670045283614771> MERRY CHRISTMAS DIPSHITS!!!!`)
+                client.channels.cache.get(id).send(`<@&786670045283614771> Today is an A day`)
                 //console.log(`@&${wantedRole}" + "\nToday is a A day!`)
                 day = "b"
                 return
             }
             if (day == "b") {
                 //client.channels.cache.get(id).send(`<@&786670045283614771> Today is a B day!\nUse ${config.prefix}update to toggle updates`)
-                client.channels.cache.get(id).send(`<@&786670045283614771> MERRY CHRISTMAS DIPSHITS!!!!`)
+                client.channels.cache.get(id).send(`<@&786670045283614771> Today is an A day`)
                 //@&${wantedRole}" + 
                 //console.log(`@&${wantedRole}" + "\nToday is a B day!`)
                 day = "a"
