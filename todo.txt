@@ -1,0 +1,15 @@
+bugs:
+calls called custom will be mistaked for categories
+lock wont tell you it's already locked
+
+/claim doesnt work
+
+BIG ISSUE:
+will crash if command used during startup check
+
+broken:
+owner
+claim
+ban/unban
+
+lock command could be updating gui multiple times
